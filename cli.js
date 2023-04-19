@@ -37,6 +37,7 @@ var latitude =  arg2.n || arg2.s * -1; // Can these be constants and should I in
 var longitude = arg2.e || arg2.w * -1; 
 
 // Utilize fetch & response to make a request here (think about relevant variable names and watch out for spacing here)
+// Debugging: Don't forget to concatenate '&daily=precipitation_hours&timezone=' to the URL
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude +'&longitude='+ longitude +'&daily=precipitation_hours&timezone='+ timezone); // What http link do I put here? | replace static values with argv values
 const data = await response.json();
 
@@ -48,22 +49,27 @@ if(arg2.j){
 }
 
 // Make if-else statement to pass assessment #6 (daily precipitation hours)
+// Intialize an empty string that will be added to (online documentation says to use 'let' to declare a JavaScript string)
+let emptystring = "";
 if (data.daily.precipitation_hours[days] > 0) { // Debugging
-    // Log the following (reference documentation)
-    console.log("You might need your galoshes");
-} else { // If the var. is not zero, it has to be zero
-    console.log("You will not need your galoshes");
+    // Iterate back to the string var. (Don't forget to add a space after galoshes)
+    emptystring = emptystring + "You might need your galoshes ";
+} else { // If the var. isn't any other number than zero, it has to be zero (Don't forget to add a space after galoshes)
+    emptystring = emptystring + "You will not need your galoshes ";
 }
 
 // Make another if-else statement to pass assessment #7 (day) | days constant already defined above.  
-// Reference documentation for the following
-if (days == 0) {
-  console.log("today.")
-} else if (days > 1) {
-  console.log("in " + days + " days.")
+// Reference documentation for the following | Debugging: Just return the 'console.log()' at the end of the file once emptystring has been iterated to
+if (days > 1) {
+    emptystring = emptystring + "in " + days + " days.";
+} else if (days == 0) {
+    emptystring = emptystring + "today.";
 } else {
-  console.log("tomorrow.")
+    emptystring = emptystring + "tomorrow.";
 }
 
+// Finally, output emptystring in the console.
+console.log(emptystring);
+
 // Debugging: Consider utilizing a 'process.exit()' at the end
-process.exit(0);
+// process.exit(0);
