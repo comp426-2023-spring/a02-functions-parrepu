@@ -1,0 +1,20 @@
+{
+  "name": "functionpackage1",
+  "version": "1.0.0",
+  "description": "We're going to learn how to create an installable Node.js command line application package",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "bin": {
+    "galosh.js": "cli.js"
+  },
+  "type": "module",
+  "author": "parrepu",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "moment-timezone": "^0.5.43",
+    "node-fetch": "^3.3.1"
+  }
+}
