@@ -71,4 +71,4 @@ if(arg2.j){
     console.log(emptystring);
 }
 
-// process.exit(0);
+process.exit(0);
