@@ -48,7 +48,7 @@ if(arg2.j){
 }
 
 // Make if-else statement to pass assessment #6 (daily percipitation hours)
-if (data.daily.percipitation_hours[days] != 0) {
+if (data.daily.percipitation_hours[days] > 0) { // Debugging
     // Log the following (reference documentation)
     console.log("You might need your galoshes");
 } else { // If the var. is not zero, it has to be zero
