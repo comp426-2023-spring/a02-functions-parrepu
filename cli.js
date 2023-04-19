@@ -72,4 +72,4 @@ if (days > 1) {
 console.log(emptystring);
 
 // Debugging: Consider utilizing a 'process.exit()' at the end
-// process.exit(0);
+process.exit(0);
