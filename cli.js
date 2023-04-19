@@ -33,8 +33,33 @@ const timezone = moment.tz.guess();
 const days = arg2.d; //"-d" from help text above
 
 // Create a latitude & longitude variable (set the following); '||' means or
-var latitude =  arg2.n || arg2.s * -1; // Can these be constants and should I include '()'?
-var longitude = arg2.e || arg2.w * -1; 
+// var latitude =  arg2.n || arg2.s * -1; // Can these be constants and should I include '()'?
+// var longitude = arg2.e || arg2.w * -1; 
+
+// Create a checker to see if latitude and longitude in range
+
+// Latitude 
+if (arg2.n){
+    // Set latitude to be the following 
+    latitude = arg2.n;
+} else if (arg2.s) {
+    latitude =  -arg2.s;
+} else { // do 'process.exit()' here
+    console.log("Latitude is not in range.");
+    process.exit(0);
+}
+
+// Longtitude 
+if (arg2.e){
+    // Set longitude to be the following 
+    longitude = arg2.e;
+} else if (arg2.w) {
+    longitude =  -arg2.w;
+} else { // do 'process.exit()' here
+    console.log("Longitude is not in range.");
+    process.exit(0);
+}
+
 
 // Utilize fetch & response to make a request here (think about relevant variable names and watch out for spacing here)
 // Debugging: Don't forget to concatenate '&daily=precipitation_hours&timezone=' to the URL
@@ -47,7 +72,7 @@ let emptystring = "";
 if (data.daily.precipitation_hours[days] > 0) { // Debugging
     // Log the following (reference documentation)
     emptystring = emptystring + "You might need your galoshes ";
-} else { // If the var. is not zero, it has to be zero
+} else { // If the var. isn't any other value than zero, it has to be zero
     emptystring = emptystring + "You will not need your galoshes ";
 }
 
@@ -71,4 +96,5 @@ if(arg2.j){
     console.log(emptystring);
 }
 
+// Do I need utilize "process.exit()" here?
 process.exit(0);
