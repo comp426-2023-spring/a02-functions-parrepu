@@ -36,8 +36,8 @@ const days = arg2.d; //"-d" from help text above
 var latitude =  arg2.n || arg2.s * -1; // Can these be constants and should I include '()'?
 var longitude = arg2.e || arg2.w * -1; 
 
-// Utilize fetch & response to make a request here
-const response = await fetch(''); // What http link do I put here?
+// Utilize fetch & response to make a request here (think about relevant variable names and watch out for spacing here)
+const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude +'&longitude='+ longitude +'&hourly=temperature_2m&timezone='+ timezone); // What http link do I put here? | replace static values with argv values
 const data = await response.json();
 
 // Include the following if-statement
@@ -66,4 +66,4 @@ if (days == 0) {
 }
 
 // Debugging: Consider utilizing a 'process.exit()' at the end
-// process.exit(0);
+process.exit(0);
