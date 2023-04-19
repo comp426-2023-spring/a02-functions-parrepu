@@ -41,32 +41,34 @@ var longitude = arg2.e || arg2.w * -1;
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude +'&longitude='+ longitude +'&daily=precipitation_hours&timezone='+ timezone); // What http link do I put here? | replace static values with argv values
 const data = await response.json();
 
-// Include the following if-statement
-if(arg2.j){
-    console.log(data); // Use 'data' variable
-    // Don't forget to use 'process.exit()'
-    process.exit(0);
-}
-
 // Make if-else statement to pass assessment #6 (daily precipitation hours)
 // Intialize an empty string that will be added to (online documentation says to use 'let' to declare a String variable)
-// let emptystring = ""; Approach prob. won't work
+let emptystring = ""; 
 if (data.daily.precipitation_hours[days] > 0) { // Debugging
     // Log the following (reference documentation)
-    console.log("You might need your galoshes");
+    emptystring = emptystring + "You might need your galoshes ";
 } else { // If the var. is not zero, it has to be zero
-    console.log("You will not need your galoshes");
+    emptystring = emptystring + "You will not need your galoshes ";;
 }
 
 // Make another if-else statement to pass assessment #7 (day) | days constant already defined above.  
 // Reference documentation for the following
 if (days == 0) {
-  console.log("today.")
+    emptystring = emptystring + "today.";
 } else if (days > 1) {
-  console.log("in " + days + " days.")
+    emptystring = emptystring + "in " + days + " days.";
 } else {
-  console.log("tomorrow.")
+  emptystring = emptystring + "tomorrow.";
 }
 
-// Debugging: Consider utilizing a 'process.exit()' at the end
-process.exit(0);
+// Debugging: Consider utilizing a 'process.exit()' at the end?
+// Include the following if-statement
+if(arg2.j){
+    console.log(data); // Use 'data' variable
+    // Don't forget to use 'process.exit()'
+    process.exit(0);
+} else {
+    console.log(emptystring);
+}
+
+// process.exit(0);
