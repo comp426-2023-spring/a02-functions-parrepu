@@ -29,7 +29,7 @@ if (arg2.h) { // Use '.' and not '= or =='
 const timezone = moment.tz.guess();
 
 // Find the appropriate request URL
-// What variables do I need to construct my URL string? -> Main variables: latitude, longitude, daily, percipitation days & hours
+// What variables do I need to construct my URL string? -> Main variables: latitude, longitude, daily, precipitation days & hours
 const days = arg2.d; //"-d" from help text above
 
 // Create a latitude & longitude variable (set the following); '||' means or
@@ -47,8 +47,8 @@ if(arg2.j){
     process.exit(0);
 }
 
-// Make if-else statement to pass assessment #6 (daily percipitation hours)
-if (data.daily.percipitation_hours[days] > 0) { // Debugging
+// Make if-else statement to pass assessment #6 (daily precipitation hours)
+if (data.daily.precipitation_hours[days] > 0) { // Debugging
     // Log the following (reference documentation)
     console.log("You might need your galoshes");
 } else { // If the var. is not zero, it has to be zero
