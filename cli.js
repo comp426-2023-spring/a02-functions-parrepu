@@ -45,20 +45,20 @@ if (arg2.n){
     // Set latitude to be the following 
     latitude = arg2.n;
 } else if (arg2.s) {
-    latitude =  -arg2.s;
+    latitude = -arg2.s;
 } else { // do 'process.exit()' here
-    console.log("Latitude is not in range.");
+    console.log("Latitude must be in range");
     process.exit(0);
 }
 
-// Longtitude 
+// Longitude 
 if (arg2.e){
     // Set longitude to be the following 
     longitude = arg2.e;
 } else if (arg2.w) {
     longitude =  -arg2.w;
 } else { // do 'process.exit()' here
-    console.log("Longitude is not in range.");
+    console.log("Longitude must be in range");
     process.exit(0);
 }
 
