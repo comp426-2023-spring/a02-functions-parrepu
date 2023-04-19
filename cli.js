@@ -49,27 +49,24 @@ if(arg2.j){
 }
 
 // Make if-else statement to pass assessment #6 (daily precipitation hours)
-// Intialize an empty string that will be added to (online documentation says to use 'let' to declare a JavaScript string)
-let emptystring = "";
+// Intialize an empty string that will be added to (online documentation says to use 'let' to declare a String variable)
+// let emptystring = ""; Approach prob. won't work
 if (data.daily.precipitation_hours[days] > 0) { // Debugging
-    // Iterate back to the string var. (Don't forget to add a space after galoshes)
-    emptystring = emptystring + "You might need your galoshes ";
-} else { // If the var. isn't any other number than zero, it has to be zero (Don't forget to add a space after galoshes)
-    emptystring = emptystring + "You will not need your galoshes ";
+    // Log the following (reference documentation)
+    console.log("You might need your galoshes");
+} else { // If the var. is not zero, it has to be zero
+    console.log("You will not need your galoshes");
 }
 
 // Make another if-else statement to pass assessment #7 (day) | days constant already defined above.  
-// Reference documentation for the following | Debugging: Just return the 'console.log()' at the end of the file once emptystring has been iterated to
-if (days > 1) {
-    emptystring = emptystring + "in " + days + " days.";
-} else if (days == 0) {
-    emptystring = emptystring + "today.";
+// Reference documentation for the following
+if (days == 0) {
+  console.log("today.")
+} else if (days > 1) {
+  console.log("in " + days + " days.")
 } else {
-    emptystring = emptystring + "tomorrow.";
+  console.log("tomorrow.")
 }
-
-// Finally, output emptystring in the console.
-console.log(emptystring);
 
 // Debugging: Consider utilizing a 'process.exit()' at the end
 process.exit(0);
