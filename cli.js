@@ -1,4 +1,4 @@
-#!/usr/bin/env node // Following should be the first line of the script file
+#!/usr/bin/env node
 
 // Good practice to include all needed imports or dependencies at the top of the file.
 // import moment from moment-timezone (will need for later)
@@ -48,7 +48,7 @@ if (data.daily.precipitation_hours[days] > 0) { // Debugging
     // Log the following (reference documentation)
     emptystring = emptystring + "You might need your galoshes ";
 } else { // If the var. is not zero, it has to be zero
-    emptystring = emptystring + "You will not need your galoshes ";;
+    emptystring = emptystring + "You will not need your galoshes ";
 }
 
 // Make another if-else statement to pass assessment #7 (day) | days constant already defined above.  
