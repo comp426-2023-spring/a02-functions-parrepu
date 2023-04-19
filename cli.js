@@ -66,4 +66,4 @@ if (days == 0) {
 }
 
 // Debugging: Consider utilizing a 'process.exit()' at the end
-process.exit(0);
+// process.exit(0);
