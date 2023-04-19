@@ -37,6 +37,8 @@ const days = arg2.d; //"-d" from help text above
 // var longitude = arg2.e || arg2.w * -1; 
 
 // Create a checker to see if latitude and longitude in range
+let latitude;
+let longitude;
 
 // Latitude 
 if (arg2.n){
