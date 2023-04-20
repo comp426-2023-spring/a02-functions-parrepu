@@ -100,5 +100,4 @@ if(arg2.j){
     console.log(emptystring);
 }
 
-// Do I need utilize "process.exit()" here?
-// process.exit(0);
+// Do I need utilize "process.exit()" here? -> Probably not needed
